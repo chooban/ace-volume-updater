@@ -7,3 +7,7 @@ a data volume.
 ## Secrets
 
 The hook requires access to a single secret: the value that github uses to sign the messages.
+
+## Todo
+
+Have it clear out older files.
