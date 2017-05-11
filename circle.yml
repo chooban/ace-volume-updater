@@ -1,7 +1,9 @@
 machine:
   services:
     - docker
-
+test:
+  override:
+    - "true"
 deployment:
   latest:
     branch: docker
