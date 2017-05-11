@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+
+deployment:
+  latest:
+    branch: docker
+    commands:
+      - docker build -t chooban/ace-volume-updated .
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - docker push chooban/ace-ace-volume-updater:latest

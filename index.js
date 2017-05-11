@@ -3,9 +3,10 @@ const http = require('http'),
   AdmZip = require('adm-zip'),
   path = require('path'),
   copydir = require('copy-dir'),
+  fs = require('fs'),
   temp = require('temp').track(),
   createHandler = require('github-webhook-handler'),
-  secret = process.env.HASH_SECRET || 'f4ker',
+  secret = fs.readFileSync('/run/secrets/github_deployment_webhook', 'utf8').trim(),
   handler = createHandler({
     path: '/hooks',
     secret: secret
